@@ -1,0 +1,760 @@
+@tailwind base;
+@tailwind components;
+
+.tooltip {
+  @apply invisible absolute -top-[100%] -translate-y-[50%] translate-x-[50%];
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-[100];
+}
+
+@tailwind utilities;
+
+@layer components {
+
+  #__next,
+  body {
+    @apply bg-neutral-50 dark:bg-gradient-to-b from-[#001134] to-black;
+  }
+}
+
+:where(html) {
+  --ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+  --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+  --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+  --ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+  --ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+  --ease-in-1: cubic-bezier(0.25, 0, 1, 1);
+  --ease-in-2: cubic-bezier(0.5, 0, 1, 1);
+  --ease-in-3: cubic-bezier(0.7, 0, 1, 1);
+  --ease-in-4: cubic-bezier(0.9, 0, 1, 1);
+  --ease-in-5: cubic-bezier(1, 0, 1, 1);
+  --ease-out-1: cubic-bezier(0, 0, 0.75, 1);
+  --ease-out-2: cubic-bezier(0, 0, 0.5, 1);
+  --ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+  --ease-out-4: cubic-bezier(0, 0, 0.1, 1);
+  --ease-out-5: cubic-bezier(0, 0, 0, 1);
+  --ease-in-out-1: cubic-bezier(0.1, 0, 0.9, 1);
+  --ease-in-out-2: cubic-bezier(0.3, 0, 0.7, 1);
+  --ease-in-out-3: cubic-bezier(0.5, 0, 0.5, 1);
+  --ease-in-out-4: cubic-bezier(0.7, 0, 0.3, 1);
+  --ease-in-out-5: cubic-bezier(0.9, 0, 0.1, 1);
+  --ease-elastic-1: cubic-bezier(0.5, 0.75, 0.75, 1.25);
+  --ease-elastic-2: cubic-bezier(0.5, 1, 0.75, 1.25);
+  --ease-elastic-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  --ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+  --ease-elastic-5: cubic-bezier(0.5, 1.75, 0.75, 1.25);
+  --ease-squish-1: cubic-bezier(0.5, -0.1, 0.1, 1.5);
+  --ease-squish-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+  --ease-squish-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+  --ease-squish-4: cubic-bezier(0.5, -0.7, 0.1, 1.5);
+  --ease-squish-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
+  --ease-step-1: steps(2);
+  --ease-step-2: steps(3);
+  --ease-step-3: steps(4);
+  --ease-step-4: steps(7);
+  --ease-step-5: steps(10);
+}
+
+:root {
+  --blue: #01b0d1;
+  --darkBlue: #01718f;
+  --green: #22d49f;
+  --cyan: #01b0d1;
+  --ebony: #0d0d1d;
+  --martinique: #2a2a54;
+  --spaceCadet: #1b1b40;
+  --theme: light;
+  --yellow: #d0d422;
+  --theme-toggle-size: 2rem;
+  --slider-thumb-height: 15px;
+  --slider-thumb-width: 15px;
+  --slider-thumb-color: var(--darkBlue);
+  --slider-secondary-thumb-display: none;
+  --slider-secondary-thumb-width: 0px;
+  --slider-secondary-thumb-height: 0px;
+  --slider-secondary-thumb-border: none;
+  --slider-secondary-thumb-box-shadow: none;
+  --slider-secondary-thumb-background: white;
+}
+
+html {
+  font-family: Aventa, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Italic.eot');
+  src: local('../public/fonts/Aventa Italic'), local('Aventa-Italic'),
+    url('../public/fonts/Aventa-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Italic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Italic.woff') format('woff'),
+    url('../public/fonts/Aventa-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa Extra';
+  src: url('../public/fonts/Aventa-ExtraLight.eot');
+  src: local('Aventa Extra Light'), local('Aventa-ExtraLight'),
+    url('../public/fonts/Aventa-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-ExtraLight.woff2') format('woff2'),
+    url('../public/fonts/Aventa-ExtraLight.woff') format('woff'),
+    url('../public/fonts/Aventa-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Black.eot');
+  src: local('Aventa Black'), local('Aventa-Black'),
+    url('../public/fonts/Aventa-Black.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Black.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Black.woff') format('woff'),
+    url('../public/fonts/Aventa-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'Aventa Italic Variable';
+  src: url('../public/fonts/AventaItalicVariable.eot');
+  src: local('Aventa Italic Variable'), local('AventaItalicVariable'),
+    url('../public/fonts/AventaItalicVariable.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/AventaItalicVariable.woff2') format('woff2'),
+    url('../public/fonts/AventaItalicVariable.woff') format('woff'),
+    url('../public/fonts/AventaItalicVariable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-BoldItalic.eot');
+  src: local('Aventa Bold Italic'), local('Aventa-BoldItalic'),
+    url('../public/fonts/Aventa-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-BoldItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-BoldItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa Extra';
+  src: url('../public/fonts/Aventa-ExtraBoldItalic.eot');
+  src: local('Aventa Extra Bold Italic'), local('Aventa-ExtraBoldItalic'),
+    url('../public/fonts/Aventa-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-ExtraBoldItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-ExtraBoldItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa Extra';
+  src: url('../public/fonts/Aventa-ExtraLightItalic.eot');
+  src: local('Aventa Extra Light Italic'), local('Aventa-ExtraLightItalic'),
+    url('../public/fonts/Aventa-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-ExtraLightItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-ExtraLightItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa Extra';
+  src: url('../public/fonts/Aventa-ExtraBold.eot');
+  src: local('Aventa Extra Bold'), local('Aventa-ExtraBold'),
+    url('../public/fonts/Aventa-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-ExtraBold.woff2') format('woff2'),
+    url('../public/fonts/Aventa-ExtraBold.woff') format('woff'),
+    url('../public/fonts/Aventa-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Bold.eot');
+  src: local('Aventa Bold'), local('Aventa-Bold'),
+    url('../public/fonts/Aventa-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Bold.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Bold.woff') format('woff'),
+    url('../public/fonts/Aventa-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-BlackItalic.eot');
+  src: local('Aventa Black Italic'), local('Aventa-BlackItalic'),
+    url('../public/fonts/Aventa-BlackItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-BlackItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-BlackItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-ThinItalic.eot');
+  src: local('Aventa Thin Italic'), local('Aventa-ThinItalic'),
+    url('../public/fonts/Aventa-ThinItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-ThinItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-ThinItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Thin.eot');
+  src: local('Aventa Thin'), local('Aventa-Thin'),
+    url('../public/fonts/Aventa-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Thin.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Thin.woff') format('woff'),
+    url('../public/fonts/Aventa-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Medium.eot');
+  src: local('Aventa Medium'), local('Aventa-Medium'),
+    url('../public/fonts/Aventa-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Medium.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Medium.woff') format('woff'),
+    url('../public/fonts/Aventa-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-LightItalic.eot');
+  src: local('Aventa Light Italic'), local('Aventa-LightItalic'),
+    url('../public/fonts/Aventa-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-LightItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-LightItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa Semi';
+  src: url('../public/fonts/Aventa-SemiBold.eot');
+  src: local('Aventa Semi Bold'), local('Aventa-SemiBold'),
+    url('../public/fonts/Aventa-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-SemiBold.woff2') format('woff2'),
+    url('../public/fonts/Aventa-SemiBold.woff') format('woff'),
+    url('../public/fonts/Aventa-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Regular.eot');
+  src: local('Aventa'), local('Aventa-Regular'),
+    url('../public/fonts/Aventa-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Regular.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Regular.woff') format('woff'),
+    url('../public/fonts/Aventa-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa Variable';
+  src: url('../public/fonts/AventaVariable.eot');
+  src: local('Aventa Variable'), local('AventaVariable'),
+    url('../public/fonts/AventaVariable.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/AventaVariable.woff2') format('woff2'),
+    url('../public/fonts/AventaVariable.woff') format('woff'),
+    url('../public/fonts/AventaVariable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-Light.eot');
+  src: local('Aventa Light'), local('Aventa-Light'),
+    url('../public/fonts/Aventa-Light.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-Light.woff2') format('woff2'),
+    url('../public/fonts/Aventa-Light.woff') format('woff'),
+    url('../public/fonts/Aventa-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url('../public/fonts/Aventa-MediumItalic.eot');
+  src: local('Aventa Medium Italic'), local('Aventa-MediumItalic'),
+    url('../public/fonts/Aventa-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-MediumItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-MediumItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aventa Semi';
+  src: url('../public/fonts/Aventa-SemiBoldItalic.eot');
+  src: local('Aventa Semi Bold Italic'), local('Aventa-SemiBoldItalic'),
+    url('../public/fonts/Aventa-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/Aventa-SemiBoldItalic.woff2') format('woff2'),
+    url('../public/fonts/Aventa-SemiBoldItalic.woff') format('woff'),
+    url('../public/fonts/Aventa-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+.button-blue-gradient {
+  background: linear-gradient(180deg, #3fdefe 0%, #01b0d1 100%);
+}
+
+.card-blue-gradient {
+  background: radial-gradient(87.96% 1634.35% at 29.13% 40.5%,
+      #01b0d1 0%,
+      #01718f 100%),
+    linear-gradient(109.1deg, #01b0d1 0%, #01718f 100%);
+}
+
+[data-theme='dark'] .neon-button {
+  overflow: hidden;
+}
+
+.neon-button span:nth-child(1) {
+  background: linear-gradient(90deg, transparent, var(--blue));
+}
+
+.neon-button span:nth-child(2) {
+  background: linear-gradient(180deg, transparent, var(--blue));
+}
+
+.neon-button span:nth-child(3) {
+  background: linear-gradient(270deg, transparent, var(--blue));
+}
+
+.neon-button span:nth-child(4) {
+  background: linear-gradient(360deg, transparent, var(--blue));
+}
+
+.neon-button:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.neon-button:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+.neon-button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.neon-button:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+/* Input Thumb */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-thumb-height);
+  width: var(--slider-thumb-width);
+
+  border-radius: 50%;
+  border-width: 4px;
+  border-color: var(--slider-thumb-color);
+  border-style: solid;
+  background: white;
+  z-index: 100;
+}
+
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-thumb-height);
+  width: var(--slider-thumb-width);
+
+  border-radius: 50%;
+  border-width: 4px;
+  border-color: var(--slider-thumb-color);
+  border-style: solid;
+  background: white;
+  box-shadow: 0 0 5px 0 #555;
+}
+
+input[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-thumb-height);
+  width: var(--slider-thumb-width);
+
+  border-radius: 50%;
+  border-width: 3px;
+  border-color: var(--slider-thumb-color);
+  border-style: solid;
+  background: white;
+  box-shadow: 0 0 5px 0 #555;
+}
+
+#slider-secondary-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-secondary-thumb-height);
+  width: var(--slider-secondary-thumb-width);
+  border: var(--slider-secondary-thumb-border);
+  box-shadow: var(--slider-secondary-thumb-box-shadow);
+  background: var(--slider-secondary-thumb-background);
+}
+
+#slider-secondary-input::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-secondary-thumb-height);
+  width: var(--slider-secondary-thumb-width);
+  border: var(--slider-secondary-thumb-border);
+  background: var(--slider-secondary-thumb-background);
+}
+
+#slider-secondary-input::-ms-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-secondary-thumb-height);
+  width: var(--slider-secondary-thumb-width);
+  border: var(--slider-secondary-thumb-border);
+  background: var(--slider-secondary-thumb-background);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.recharts-layer {
+  outline: none;
+}
+
+[data-theme='dark'] input[type='range']::-webkit-slider-thumb,
+[data-theme='dark'] input[type='range']::-moz-range-thumb,
+[data-theme='dark'] input[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+  height: var(--slider-thumb-height);
+  width: var(--slider-thumb-width);
+
+  border-radius: 50%;
+  border-width: 4px;
+  border-color: var(--slider-thumb-color);
+  border-style: solid;
+  background: white;
+  box-shadow: 0 0 5px 0 #555;
+}
+
+/* table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+td {
+  border: solid 1px #dcdcdc;
+  border-style: solid none solid none;
+}
+
+td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 5px;
+}
+
+td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-right: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+tr:first-child td {
+  border-top-style: solid;
+}
+
+tr td:first-child {
+  border-left-style: solid;
+}
+
+tr td:last-child {
+  border-right-style: solid;
+}
+
+*/
+/* td {
+  border: solid 1px #dcdcdc;
+  border-style: solid none solid none;
+  padding: 5px;
+} */
+
+.sun-and-moon> :is(.moon, .sun, .sun-beams) {
+  transform-origin: center center;
+}
+
+.sun-and-moon> :is(.moon, .sun) {
+  fill: var(--icon-fill);
+}
+
+.theme-toggle:is(:hover, :focus-visible)>.sun-and-moon> :is(.moon, .sun) {
+  fill: var(--icon-fill-hover);
+}
+
+.sun-and-moon>.sun-beams {
+  stroke: var(--icon-fill);
+  stroke-width: 2px;
+}
+
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon>.sun-beams {
+  stroke: var(--icon-fill-hover);
+}
+
+[data-theme='dark'] .sun-and-moon>.sun {
+  transform: scale(1.75);
+}
+
+[data-theme='dark'] .sun-and-moon>.sun-beams {
+  opacity: 0;
+}
+
+[data-theme='dark'] .sun-and-moon>.moon>circle {
+  transform: translate(-7px);
+}
+
+@supports (cx: 1) {
+  [data-theme='dark'] .sun-and-moon>.moon>circle {
+    transform: translate(0);
+    cx: 17;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon>.sun {
+    transition: transform 0.5s var(--ease-elastic-3);
+  }
+
+  .sun-and-moon>.sun-beams {
+    transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3);
+  }
+
+  .sun-and-moon .moon>circle {
+    transition: transform 0.25s var(--ease-out-5);
+  }
+
+  @supports (cx: 1) {
+    .sun-and-moon .moon>circle {
+      transition: cx 0.25s var(--ease-out-5);
+    }
+  }
+
+  [data-theme='dark'] .sun-and-moon>.sun {
+    transform: scale(1.75);
+    transition-timing-function: var(--ease-3);
+    transition-duration: 0.25s;
+  }
+
+  [data-theme='dark'] .sun-and-moon>.sun-beams {
+    transform: rotate(-25deg);
+    transition-duration: 0.15s;
+  }
+
+  [data-theme='dark'] .sun-and-moon>.moon>circle {
+    transition-delay: 0.25s;
+    transition-duration: 0.5s;
+  }
+}
+
+@media all and (max-width: 1020px) {
+  :root {
+    --theme-toggle-size: 1.8rem;
+  }
+}
+
+.theme-toggle {
+  --icon-fill: hsl(210 10% 30%);
+  --icon-fill-hover: hsl(210 10% 15%);
+  background: none;
+  border: none;
+  padding: 0;
+  inline-size: var(--theme-toggle-size);
+  block-size: var(--theme-toggle-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+}
+
+.theme-toggle>svg {
+  inline-size: 100%;
+  block-size: 100%;
+  stroke-linecap: round;
+}
+
+[data-theme='dark'] .theme-toggle {
+  --icon-fill: hsl(210 10% 70%);
+  --icon-fill-hover: hsl(210 15% 90%);
+}
+
+@media (hover: none) {
+  .theme-toggle {
+    --size: 48px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  block-size: 100%;
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+@supports not (color-scheme: dark) {
+  html[data-theme='dark'] {
+    background: #111;
+  }
+}
+
+@-webkit-keyframes octocat-wave {
+
+  0%,
+  to {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes octocat-wave {
+
+  0%,
+  to {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+.request-loader {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  width: 125px;
+  border-radius: 100%;
+  /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25); */
+}
+
+.request-loader::after {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* top: -8px; */
+  left: -15px;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border: 8px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  animation-name: ripple;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+  z-index: -1;
+}
+
+.request-loader::before {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* top: -8px; */
+  left: -15px;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border: 8px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  animation-name: ripple;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+  z-index: -1;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(2, 2, 2);
+  }
+}

@@ -1,0 +1,119 @@
+{
+    "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_ltv",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "_reserveOracle",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_redstoneEthXPriceFeed",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_usdPerEthChainlink",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ltv",
+              "type": "uint256"
+            }
+          ],
+          "name": "InvalidLtv",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidReserveOracle",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MathOverflowedMulDiv",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "from",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "to",
+              "type": "uint256"
+            }
+          ],
+          "name": "NotScalingUp",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LTV",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "RESERVE_ORACLE",
+          "outputs": [
+            {
+              "internalType": "contract ReserveOracle",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getPrice",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "ethPerEthX",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getSpot",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "spot",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+}
