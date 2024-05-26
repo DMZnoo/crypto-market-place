@@ -1,0 +1,136 @@
+{
+    "abi": [
+        {
+            "type": "function",
+            "name": "rsETHPrice",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "updateRSETHPrice",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        }
+    ],
+    "bytecode": {
+        "object": "0x",
+        "sourceMap": "",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x",
+        "sourceMap": "",
+        "linkReferences": {}
+    },
+    "methodIdentifiers": {
+        "rsETHPrice()": "b4b46434",
+        "updateRSETHPrice()": "51ce226a"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"rsETHPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"updateRSETHPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ProviderInterfaces.sol\":\"ILRTOracle\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":300},\"remappings\":[\":@balancer-labs/v2-interfaces/=lib/balancer-v2-monorepo/pkg/interfaces/\",\":@balancer-labs/v2-pool-stable/=lib/balancer-v2-monorepo/pkg/pool-stable/\",\":@chainlink/contracts/=lib/chainlink/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v3-core/=lib/v3-core/\",\":@uniswap/v3-periphery/=lib/v3-periphery/\",\":balancer-v2-monorepo/=lib/balancer-v2-monorepo/\",\":chainlink/=lib/chainlink/\",\":ds-test/=lib/forge-safe/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-safe/=lib/forge-safe/src/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":solady/=lib/solady/\",\":solarray/=lib/solarray/src/\",\":solidity-stringutils/=lib/forge-safe/lib/surl/lib/solidity-stringutils/\",\":solmate/=lib/forge-safe/lib/solmate/src/\",\":surl/=lib/forge-safe/lib/surl/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"src/interfaces/ProviderInterfaces.sol\":{\"keccak256\":\"0x9a39b591cd2c124e011b053642d3293126b7e2f64fb36585718084ce0aa98f65\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f8d12f48f9c045889705243a1cab4e82f7e909925c56ac537c87ed444c177185\",\"dweb:/ipfs/QmZfeCQXsusJfesy5VzeQkJaqFQidpT4hbR7T365C2PTNU\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.21+commit.d9974bed"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "rsETHPrice",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "updateRSETHPrice"
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {},
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {},
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@balancer-labs/v2-interfaces/=lib/balancer-v2-monorepo/pkg/interfaces/",
+                "@balancer-labs/v2-pool-stable/=lib/balancer-v2-monorepo/pkg/pool-stable/",
+                "@chainlink/contracts/=lib/chainlink/contracts/",
+                "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+                "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+                "@uniswap/v3-core/=lib/v3-core/",
+                "@uniswap/v3-periphery/=lib/v3-periphery/",
+                "balancer-v2-monorepo/=lib/balancer-v2-monorepo/",
+                "chainlink/=lib/chainlink/",
+                "ds-test/=lib/forge-safe/lib/ds-test/src/",
+                "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+                "forge-safe/=lib/forge-safe/src/",
+                "forge-std/=lib/forge-std/src/",
+                "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+                "solady/=lib/solady/",
+                "solarray/=lib/solarray/src/",
+                "solidity-stringutils/=lib/forge-safe/lib/surl/lib/solidity-stringutils/",
+                "solmate/=lib/forge-safe/lib/solmate/src/",
+                "surl/=lib/forge-safe/lib/surl/",
+                "v3-core/=lib/v3-core/",
+                "v3-periphery/=lib/v3-periphery/contracts/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 300
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/interfaces/ProviderInterfaces.sol": "ILRTOracle"
+            },
+            "evmVersion": "shanghai",
+            "libraries": {}
+        },
+        "sources": {
+            "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+                "urls": [
+                    "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+                    "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+                ],
+                "license": "MIT"
+            },
+            "src/interfaces/ProviderInterfaces.sol": {
+                "keccak256": "0x9a39b591cd2c124e011b053642d3293126b7e2f64fb36585718084ce0aa98f65",
+                "urls": [
+                    "bzz-raw://f8d12f48f9c045889705243a1cab4e82f7e909925c56ac537c87ed444c177185",
+                    "dweb:/ipfs/QmZfeCQXsusJfesy5VzeQkJaqFQidpT4hbR7T365C2PTNU"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 161
+}

@@ -1,0 +1,15 @@
+{
+  "name": "icons",
+  "version": "1.0.0",
+  "description": "Icon Library",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:icons": "npx @svgr/cli --typescript  --out-dir ./src/lib/icons --ignore-existing -- ./src/lib/icons"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^7.0.0",
+    "ag-grid-community": "^29.2.0",
+    "ag-grid-react": "^29.2.0"
+  }
+}

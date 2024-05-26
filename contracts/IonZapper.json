@@ -1,0 +1,157 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IonPool",
+          "name": "_ionPool",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IWETH9",
+          "name": "_weth",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IERC20",
+          "name": "_stEth",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IWstEth",
+          "name": "_wstEth",
+          "type": "address"
+        },
+        {
+          "internalType": "contract GemJoin",
+          "name": "_wstEthJoin",
+          "type": "address"
+        },
+        {
+          "internalType": "contract Whitelist",
+          "name": "_whitelist",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "POOL",
+      "outputs": [
+        {
+          "internalType": "contract IonPool",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "STETH",
+      "outputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WETH",
+      "outputs": [
+        {
+          "internalType": "contract IWETH9",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WHITELIST",
+      "outputs": [
+        {
+          "internalType": "contract Whitelist",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WSTETH",
+      "outputs": [
+        {
+          "internalType": "contract IWstEth",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WSTETH_JOIN",
+      "outputs": [
+        {
+          "internalType": "contract GemJoin",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountStEth",
+          "type": "uint256"
+        }
+      ],
+      "name": "zapDepositWstEth",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "ilkIndex",
+          "type": "uint8"
+        }
+      ],
+      "name": "zapRepay",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "proof",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "zapSupply",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+This is a copied repository of Ion Protocol's [lending platform](https://www.app.ionprotocol.io/)

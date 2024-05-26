@@ -1,0 +1,114 @@
+{
+    "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_ltv",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "_reserveOracle",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_stEthToEthChainlink",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_wstETH",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ltv",
+              "type": "uint256"
+            }
+          ],
+          "name": "InvalidLtv",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidReserveOracle",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MathOverflowedMulDiv",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "int256",
+              "name": "value",
+              "type": "int256"
+            }
+          ],
+          "name": "SafeCastOverflowedIntToUint",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LTV",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "RESERVE_ORACLE",
+          "outputs": [
+            {
+              "internalType": "contract ReserveOracle",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getPrice",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "ethPerWstEth",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getSpot",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "spot",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+}

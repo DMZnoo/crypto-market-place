@@ -1,0 +1,251 @@
+{
+    "abi": [
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint96",
+                  "name": "adjustedProfitMargin",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "minimumKinkRate",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "reserveFactor",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "adjustedBaseRate",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "minimumBaseRate",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "optimalUtilizationRate",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "distributionFactor",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "adjustedAboveKinkSlope",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "minimumAboveKinkSlope",
+                  "type": "uint96"
+                }
+              ],
+              "internalType": "struct IlkData[]",
+              "name": "ilkDataList",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "contract IYieldOracle",
+              "name": "_yieldOracle",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "CollateralIndexOutOfBounds",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "sum",
+              "type": "uint256"
+            }
+          ],
+          "name": "DistributionFactorsDoNotSumToOne",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "InvalidYieldOracleAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MathOverflowedMulDiv",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "from",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "to",
+              "type": "uint256"
+            }
+          ],
+          "name": "NotScalingUp",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "COLLATERAL_COUNT",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalIlkDebtsLength",
+              "type": "uint256"
+            }
+          ],
+          "name": "TotalDebtsLength",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "COLLATERAL_COUNT",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "YIELD_ORACLE",
+          "outputs": [
+            {
+              "internalType": "contract IYieldOracle",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ilkIndex",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalIlkDebt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalEthSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "calculateInterestRate",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "name": "unpackCollateralConfig",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint96",
+                  "name": "adjustedProfitMargin",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "minimumKinkRate",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "reserveFactor",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "adjustedBaseRate",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "minimumBaseRate",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "optimalUtilizationRate",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "distributionFactor",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "adjustedAboveKinkSlope",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "minimumAboveKinkSlope",
+                  "type": "uint96"
+                }
+              ],
+              "internalType": "struct IlkData",
+              "name": "ilkData",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+}
